@@ -15,33 +15,43 @@ namespace FalsaPosicion1
 
 	class Program
 	{
-		public static string Expresion = string.Empty;
+		public static class Global
+		{
+			public static string? evalu;
+		}
 		static int max_iteracion = 110;
+		
 		static void Main(string[] args)
 		{
 
 
 			//variables necesarias
-			double xi = 0;
-			double xs = 0;
-			double xr = 0;
-			double xa = 0;
-			double error = 0;
-			int iteracion = 0;
+					
 
+
+
+
+			double xr = 0; //para la raiz
+			double xa = 0; //para el anterior de la formula del error
+			double error = 0; //para la formula del erros
+			int iteracion = 0; //numero de iteraciones
+		
 
 			//ingresar la funcion
 
 			//Console.WriteLine("Ingrese la Funcion");
-			//Expresion = Console.ReadLine();
+
+			//Global.evalu = Console.ReadLine();
+			
+			
 
 			//pedir el valor de Xi que es el inferior
 			Console.WriteLine("Dame el valor de xi");
-			xi = Convert.ToDouble(Console.ReadLine());
+			double xi = Convert.ToDouble(Console.ReadLine());
 
 			//pedir el valor de Xs que es el superior
 			Console.WriteLine("Dame el valor de xs");
-			xs = Convert.ToDouble(Console.ReadLine());
+			double xs = Convert.ToDouble(Console.ReadLine());
 
 			//falsa posicion 
 
@@ -85,14 +95,10 @@ namespace FalsaPosicion1
 
 		static double F(double e)
 		{
-			//Argument X = new Argument("X = e", e);
-			//Function f = new Function("f(X)= x^3+3");
-			//Expression el = new Expression("f(X)", f,X);
-			////mXparser.consolePrintln("Res 1: " + el.getExpressionString() + " = " + el.calculate());
-			////mXparser.consolePrintln("Res 2: f(5) = " + f.calculate(5));
-			//double operacion = el.calculate();
-			double operacion = ((e * e * e) + 3);
+			//Function f = new Function(Global.evalu);
 
+			double operacion = ((e * e * e) + 3);
+			
 			return operacion;
 		}
 
